@@ -135,7 +135,7 @@
             <div class="flex justify-between h-20 items-center gap-4">
                 
                 <!-- Logo -->
-                <div class="flex items-center gap-3 cursor-pointer shrink-0" onclick="window.scrollTo(0,0)">
+                <div class="flex items-center gap-3 cursor-pointer shrink-0" onclick="window.location.href='./'">
                     <div id="logo-icon" class="bg-white text-brand-dark font-bold w-10 h-10 flex items-center justify-center rounded-full text-xl transition-all duration-300 shadow-sm overflow-hidden">
                         <img id="logo-img" src="logo_M_white.png" alt="M" class="w-3/5 h-3/5 object-contain invert transition-all duration-300">
                     </div>
@@ -147,11 +147,11 @@
                 
                 <!-- Center Menu -->
                 <div class="hidden lg:flex items-center justify-center flex-1 gap-1">
-                    <a href="#sluzby" class="nav-link text-white hover:bg-white/10 hover:backdrop-blur-md">Služby</a>
+                    <a href="sluzby/" class="nav-link text-white hover:bg-white/10 hover:backdrop-blur-md">Služby</a>
                     <div id="nav-divider" class="h-4 w-px bg-white/20 mx-2 transition-colors duration-300"></div>
-                    <a href="#soukromi" class="nav-link text-white hover:bg-white/10 hover:backdrop-blur-md">Rodiny a jednotlivci</a>
+                    <a href="financniplan/" class="nav-link text-white hover:bg-white/10 hover:backdrop-blur-md">Rodiny a jednotlivci</a>
                     <div id="nav-divider-2" class="h-4 w-px bg-white/20 mx-2 transition-colors duration-300"></div>
-                    <a href="#firmy" class="nav-link text-white hover:bg-white/10 hover:backdrop-blur-md">Podnikatelé a firmy</a>
+                    <a href="propodnikatele/" class="nav-link text-white hover:bg-white/10 hover:backdrop-blur-md">Podnikatelé a firmy</a>
                 </div>
 
                 <!-- Hamburger -->
@@ -169,23 +169,23 @@
                 <div>
                     <p class="px-4 text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Hlavní nabídka</p>
                     <div class="space-y-1">
-                        <a href="#sluzby" class="block px-4 py-3 text-lg font-bold text-slate-800 rounded-xl hover:bg-slate-50">Služby</a>
-                        <a href="#soukromi" class="block px-4 py-3 text-lg font-bold text-slate-800 rounded-xl hover:bg-slate-50">Rodiny a jednotlivci</a>
-                        <a href="#firmy" class="block px-4 py-3 text-lg font-bold text-slate-800 rounded-xl hover:bg-slate-50">Podnikatelé a firmy</a>
+                        <a href="sluzby/" class="block px-4 py-3 text-lg font-bold text-slate-800 rounded-xl hover:bg-slate-50">Služby</a>
+                        <a href="financniplan/" class="block px-4 py-3 text-lg font-bold text-slate-800 rounded-xl hover:bg-slate-50">Rodiny a jednotlivci</a>
+                        <a href="propodnikatele/" class="block px-4 py-3 text-lg font-bold text-slate-800 rounded-xl hover:bg-slate-50">Podnikatelé a firmy</a>
                     </div>
                 </div>
                 
                 <div>
                     <p class="px-4 text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 mt-6">Nástroje</p>
                     <div class="space-y-2">
-                        <a href="hypotecni_kalkulacka.html" class="flex items-center px-4 py-3 text-brand-dark font-bold bg-brand-light/50 rounded-xl border border-brand-border/50">
+                        <a href="hypoteka/" class="flex items-center px-4 py-3 text-brand-dark font-bold bg-brand-light/50 rounded-xl border border-brand-border/50">
                             <i class="fas fa-calculator text-brand-orange mr-3"></i> Hypoteční kalkulačka
                         </a>
-                        <a href="#" class="flex items-center px-4 py-3 text-brand-dark font-bold bg-white border border-slate-100 rounded-xl hover:bg-slate-50">
+                        <a href="investice/" class="flex items-center px-4 py-3 text-brand-dark font-bold bg-white border border-slate-100 rounded-xl hover:bg-slate-50">
                             <i class="fas fa-chart-line text-brand-main mr-3"></i> Investiční kalkulačka
                         </a>
                         <!-- Nová kalkulačka -->
-                        <a href="#" class="flex items-center px-4 py-3 text-brand-dark font-bold bg-white border border-slate-100 rounded-xl hover:bg-slate-50">
+                        <a href="zivot/" class="flex items-center px-4 py-3 text-brand-dark font-bold bg-white border border-slate-100 rounded-xl hover:bg-slate-50">
                             <i class="fas fa-heart-pulse text-red-500 mr-3"></i> Kalkulačka životního pojištění
                         </a>
                     </div>
@@ -243,7 +243,7 @@
 
                     <!-- CTA -->
                     <div class="flex flex-col sm:flex-row gap-4 pt-6">
-                        <a href="hypotecni_kalkulacka.html" class="group relative w-full sm:w-auto inline-block bg-gradient-to-r from-[#ea8d00] to-[#fbbf24] hover:to-[#ea8d00] text-brand-dark font-extrabold py-5 px-8 rounded-xl shadow-lg shadow-orange-500/20 transition-all transform hover:scale-[1.02] overflow-hidden no-underline text-center">
+                        <a href="investice/" class="group relative w-full sm:w-auto inline-block bg-gradient-to-r from-[#ea8d00] to-[#fbbf24] hover:to-[#ea8d00] text-brand-dark font-extrabold py-5 px-8 rounded-xl shadow-lg shadow-orange-500/20 transition-all transform hover:scale-[1.02] overflow-hidden no-underline text-center">
                             <div class="absolute top-0 left-0 w-full h-full bg-white/30 skew-x-[-20deg] animate-shimmer"></div>
                             <div class="relative flex items-center justify-center gap-3">
                                 <i class="fas fa-calculator text-xl text-brand-dark"></i>
@@ -364,7 +364,7 @@
                     <p class="text-slate-600 mb-6 text-sm flex-grow">
                         Vytvořím pro vás portfolio na míru, které odolá inflaci a zajistí vám rentu. Využívám nízkonákladové ETF fondy.
                     </p>
-                    <a href="#" class="btn-sweep inline-flex items-center text-sm font-bold px-5 py-3 rounded-lg shadow-sm w-full justify-center mt-auto">
+                    <a href="investice/" class="btn-sweep inline-flex items-center text-sm font-bold px-5 py-3 rounded-lg shadow-sm w-full justify-center mt-auto">
                         <i class="fas fa-calculator mr-2"></i> Spočítejte si investice
                     </a>
                 </div>
@@ -383,7 +383,7 @@
                     <p class="text-slate-600 mb-6 text-sm flex-grow">
                         Pomohu vám nastavit hypotéku tak, aby vás nezatížila, a poradím, jak na refinancování nebo čerpání úvěru pro vaše bydlení.
                     </p>
-                    <a href="hypotecni_kalkulacka.html" class="btn-sweep inline-flex items-center text-sm font-bold px-5 py-3 rounded-lg shadow-sm w-full justify-center mt-auto">
+                    <a href="hypoteka/" class="btn-sweep inline-flex items-center text-sm font-bold px-5 py-3 rounded-lg shadow-sm w-full justify-center mt-auto">
                         <i class="fas fa-calculator mr-2"></i> Hypoteční kalkulačka
                     </a>
                 </div>
@@ -402,7 +402,7 @@
                     <p class="text-slate-600 mb-6 text-sm flex-grow">
                         Provedu audit vašich smluv, odstraním duplicity a nastavím krytí tak, aby vás skutečně chránilo v kritických situacích.
                     </p>
-                    <a href="#" class="btn-sweep inline-flex items-center text-sm font-bold px-5 py-3 rounded-lg shadow-sm w-full justify-center mt-auto">
+                    <a href="zivot/" class="btn-sweep inline-flex items-center text-sm font-bold px-5 py-3 rounded-lg shadow-sm w-full justify-center mt-auto">
                         <i class="fas fa-file-contract mr-2"></i> Nastavení pojištění
                     </a>
                 </div>
@@ -421,7 +421,7 @@
                     <p class="text-slate-600 mb-6 text-sm flex-grow">
                         Máte více půjček? Pomohu vám je sloučit do jedné, snížit měsíční splátku a celkové přeplacení.
                     </p>
-                    <a href="#" class="btn-sweep inline-flex items-center text-sm font-bold px-5 py-3 rounded-lg shadow-sm w-full justify-center mt-auto">
+                    <a href="hypoteka/" class="btn-sweep inline-flex items-center text-sm font-bold px-5 py-3 rounded-lg shadow-sm w-full justify-center mt-auto">
                         <i class="fas fa-calculator mr-2"></i> Spočítat úsporu
                     </a>
                 </div>
@@ -440,7 +440,7 @@
                     <p class="text-slate-600 mb-6 text-sm flex-grow">
                         Získejte od státu maximum. Pomohu vám nastavit penzijní spoření tak, abyste využili všechny státní příspěvky a daňové úlevy naplno.
                     </p>
-                    <a href="#" class="btn-sweep inline-flex items-center text-sm font-bold px-5 py-3 rounded-lg shadow-sm w-full justify-center mt-auto">
+                    <a href="dps/" class="btn-sweep inline-flex items-center text-sm font-bold px-5 py-3 rounded-lg shadow-sm w-full justify-center mt-auto">
                         <i class="fas fa-piggy-bank mr-2"></i> Optimální nastavení penze
                     </a>
                 </div>
@@ -459,7 +459,7 @@
                     <p class="text-slate-600 mb-6 text-sm flex-grow">
                         Kompletní servis při prodeji či nákupu nemovitosti. Zajistím tržní odhad, profesionální prezentaci, právní servis a bezpečný převod.
                     </p>
-                    <a href="#" class="btn-sweep inline-flex items-center text-sm font-bold px-5 py-3 rounded-lg shadow-sm w-full justify-center mt-auto">
+                    <a href="reality/" class="btn-sweep inline-flex items-center text-sm font-bold px-5 py-3 rounded-lg shadow-sm w-full justify-center mt-auto">
                         <i class="fas fa-key mr-2"></i> Konzultace realit
                     </a>
                 </div>
@@ -570,11 +570,11 @@
                 <div>
                     <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Menu</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#sluzby" class="hover:text-brand-orange transition">Služby</a></li>
-                        <li><a href="hypotecni_kalkulacka.html" class="hover:text-brand-orange transition">Hypoteční kalkulačka</a></li>
-                        <li><a href="#" class="hover:text-brand-orange transition">Investiční kalkulačka</a></li>
-                        <li><a href="#soukromi" class="hover:text-brand-orange transition">Rodiny a jednotlivci</a></li>
-                        <li><a href="#firmy" class="hover:text-brand-orange transition">Podnikatelé a firmy</a></li>
+                        <li><a href="sluzby/" class="hover:text-brand-orange transition">Služby</a></li>
+                        <li><a href="hypoteka/" class="hover:text-brand-orange transition">Hypoteční kalkulačka</a></li>
+                        <li><a href="investice/" class="hover:text-brand-orange transition">Investiční kalkulačka</a></li>
+                        <li><a href="financniplan/" class="hover:text-brand-orange transition">Rodiny a jednotlivci</a></li>
+                        <li><a href="propodnikatele/" class="hover:text-brand-orange transition">Podnikatelé a firmy</a></li>
                     </ul>
                 </div>
 
@@ -591,7 +591,7 @@
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-envelope mr-3 text-brand-orange"></i>
-                            <span>kontakt@marek-marek.cz</span>
+                            <a href="mailto:kontakt@marek-marek.cz" class="hover:text-brand-orange transition">kontakt@marek-marek.cz</a>
                         </li>
                     </ul>
                 </div>
@@ -599,9 +599,8 @@
                 <div>
                     <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Informace</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-white transition">Ochrana osobních údajů</a></li>
-                        <li><a href="#" class="hover:text-white transition">Cookies</a></li>
-                        <li><a href="#" class="hover:text-white transition">Investiční disclaimer</a></li>
+                        <li><a href="gdpr/" class="hover:text-white transition">Ochrana osobních údajů</a></li>
+                        <li><a href="cookies/" class="hover:text-white transition">Cookies</a></li>
                     </ul>
                 </div>
             </div>

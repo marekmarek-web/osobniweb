@@ -436,7 +436,7 @@ const InsuranceCalculator = () => {
             <div className="flex justify-between h-20 items-center gap-4">
                 
                 {/* Logo */}
-                <a href="index.html" className="flex items-center gap-3 cursor-pointer shrink-0">
+                <a href="/" className="flex items-center gap-3 cursor-pointer shrink-0">
                     <div id="logo-icon" className={`font-bold w-10 h-10 flex items-center justify-center rounded-full text-xl transition-all duration-300 shadow-sm overflow-hidden ${isScrolled ? 'bg-[#0a0f29] text-white' : 'bg-white text-[#0a0f29]'}`}>
                         {/* Ponecháno SVG logo pro inverzi stylů */}
                         <HeartPulse className={`w-3/5 h-3/5 object-contain transition-all duration-300 ${isScrolled ? 'text-white' : 'text-[#0a0f29]'}`} strokeWidth={3} />
@@ -449,11 +449,11 @@ const InsuranceCalculator = () => {
                 
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center justify-center flex-1 gap-6">
-                    <a href="index.html#sluzby" className={`nav-link hover:backdrop-blur-md ${isScrolled ? 'text-[#0B3A7A] hover:bg-[#EAF3FF]' : 'text-white hover:bg-white/10'}`}>Služby</a>
+                    <a href="/sluzby/" className={`nav-link hover:backdrop-blur-md ${isScrolled ? 'text-[#0B3A7A] hover:bg-[#EAF3FF]' : 'text-white hover:bg-white/10'}`}>Služby</a>
                     <div id="nav-divider" className={`h-4 w-px mx-2 transition-colors duration-300 ${isScrolled ? 'bg-[#D6E6FF]' : 'bg-white/20'}`}></div>
-                    <a href="index.html#financniplan" className={`nav-link hover:backdrop-blur-md ${isScrolled ? 'text-[#0B3A7A] hover:bg-[#EAF3FF]' : 'text-white hover:bg-white/10'}`}>Rodiny a jednotlivci</a>
+                    <a href="/financniplan/" className={`nav-link hover:backdrop-blur-md ${isScrolled ? 'text-[#0B3A7A] hover:bg-[#EAF3FF]' : 'text-white hover:bg-white/10'}`}>Rodiny a jednotlivci</a>
                     <div id="nav-divider-2" className={`h-4 w-px mx-2 transition-colors duration-300 ${isScrolled ? 'bg-[#D6E6FF]' : 'bg-white/20'}`}></div>
-                    <a href="index.html#propodnikatele" className={`nav-link hover:backdrop-blur-md ${isScrolled ? 'text-[#0B3A7A] hover:bg-[#EAF3FF]' : 'text-white hover:bg-white/10'}`}>Podnikatelé a firmy</a>
+                    <a href="/propodnikatele/" className={`nav-link hover:backdrop-blur-md ${isScrolled ? 'text-[#0B3A7A] hover:bg-[#EAF3FF]' : 'text-white hover:bg-white/10'}`}>Podnikatelé a firmy</a>
                 </div>
 
                 {/* Hamburger (Zobrazuje se VŠUDE) */}
@@ -476,9 +476,9 @@ const InsuranceCalculator = () => {
                 <div>
                     <p className="px-4 text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Hlavní nabídka</p>
                     <div className="space-y-1">
-                        <a href="index.html#sluzby" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-lg font-bold text-slate-800 rounded-xl hover:bg-slate-50">Služby</a>
-                        <a href="index.html#financniplan" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-lg font-bold text-slate-800 rounded-xl hover:bg-slate-50">Rodiny a jednotlivci</a>
-                        <a href="index.html#propodnikatele" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-lg font-bold text-slate-800 rounded-xl hover:bg-slate-50">Podnikatelé a firmy</a>
+                        <a href="/sluzby/" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-lg font-bold text-slate-800 rounded-xl hover:bg-slate-50">Služby</a>
+                        <a href="/financniplan/" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-lg font-bold text-slate-800 rounded-xl hover:bg-slate-50">Rodiny a jednotlivci</a>
+                        <a href="/propodnikatele/" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-lg font-bold text-slate-800 rounded-xl hover:bg-slate-50">Podnikatelé a firmy</a>
                     </div>
                 </div>
                 
@@ -486,11 +486,11 @@ const InsuranceCalculator = () => {
                 <div className="pt-4">
                     <p className="px-4 text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 mt-6">Nástroje</p>
                     <div className="space-y-2">
-                        {/* Upravené cesty */}
-                        <a href="/khypo" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center px-4 py-3 text-[#0a0f29] font-bold bg-[#EAF3FF]/50 rounded-xl border border-[#D6E6FF]/50 hover:bg-[#EAF3FF]">
+                        {/* Kalkulačky - Upravené cesty */}
+                        <a href="/hypoteky/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center px-4 py-3 text-[#0a0f29] font-bold bg-[#EAF3FF]/50 rounded-xl border border-[#D6E6FF]/50 hover:bg-[#EAF3FF]">
                             <Landmark className="w-5 h-5 text-[#ea8d00] mr-3" /> Hypoteční kalkulačka
                         </a>
-                        <a href="/kinvestice" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center px-4 py-3 text-[#0a0f29] font-bold bg-white border border-slate-100 rounded-xl hover:bg-slate-50">
+                        <a href="/investice/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center px-4 py-3 text-[#0a0f29] font-bold bg-white border border-slate-100 rounded-xl hover:bg-slate-50">
                             <TrendingUp className="w-5 h-5 text-[#0B3A7A] mr-3" /> Investiční kalkulačka
                         </a>
                         <a href="#top" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center px-4 py-3 text-[#0a0f29] font-bold bg-white border border-slate-100 rounded-xl hover:bg-slate-50">
@@ -916,7 +916,7 @@ const InsuranceCalculator = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 
                 {/* Card 1: Investice */}
-                <a href="/kinvestice" className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-lg hover:border-[#ea8d00] transition-all group flex flex-col items-center text-center">
+                <a href="/investice/" className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-lg hover:border-[#ea8d00] transition-all group flex flex-col items-center text-center">
                    <div className="w-16 h-16 bg-blue-50 text-[#0a0f29] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#ea8d00] group-hover:text-white transition-colors">
                      <TrendingUp className="w-8 h-8" />
                    </div>
@@ -925,7 +925,7 @@ const InsuranceCalculator = () => {
                 </a>
 
                 {/* Card 2: Hypotéky */}
-                <a href="/khypo" className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-lg hover:border-[#ea8d00] transition-all group flex flex-col items-center text-center">
+                <a href="/hypoteky/" className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-lg hover:border-[#ea8d00] transition-all group flex flex-col items-center text-center">
                    <div className="w-16 h-16 bg-blue-50 text-[#0a0f29] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#ea8d00] group-hover:text-white transition-colors">
                      <Landmark className="w-8 h-8" />
                    </div>
@@ -961,11 +961,11 @@ const InsuranceCalculator = () => {
             <div>
               <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-widest">Menu</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="index.html#sluzby" className="hover:text-[#ea8d00] transition">Služby</a></li>
-                <li><a href="/khypo" className="hover:text-[#ea8d00] transition">Hypoteční kalkulačka</a></li>
-                <li><a href="/kinvestice" className="hover:text-[#ea8d00] transition">Investiční kalkulačka</a></li>
-                <li><a href="index.html#financniplan" className="hover:text-[#ea8d00] transition">Rodiny a jednotlivci</a></li>
-                <li><a href="index.html#propodnikatele" className="hover:text-[#ea8d00] transition">Podnikatelé a firmy</a></li>
+                <li><a href="/sluzby/" className="hover:text-[#ea8d00] transition">Služby</a></li>
+                <li><a href="/hypoteky/" className="hover:text-[#ea8d00] transition">Hypoteční kalkulačka</a></li>
+                <li><a href="/investice/" className="hover:text-[#ea8d00] transition">Investiční kalkulačka</a></li>
+                <li><a href="/financniplan/" className="hover:text-[#ea8d00] transition">Rodiny a jednotlivci</a></li>
+                <li><a href="/propodnikatele/" className="hover:text-[#ea8d00] transition">Podnikatelé a firmy</a></li>
               </ul>
             </div>
 
@@ -990,8 +990,8 @@ const InsuranceCalculator = () => {
             <div>
               <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-widest">Informace</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="gdpr.html" className="hover:text-white transition">Ochrana osobních údajů</a></li>
-                <li><a href="cookies.html" className="hover:text-white transition">Cookies</a></li>
+                <li><a href="/gdpr/" className="hover:text-white transition">Ochrana osobních údajů</a></li>
+                <li><a href="/cookies/" className="hover:text-white transition">Cookies</a></li>
                 {/* Investiční disclaimer odstraněn */}
               </ul>
             </div>
@@ -1017,7 +1017,7 @@ const InsuranceCalculator = () => {
                       <Sparkles className="w-6 h-6 text-yellow-300" />
                   </div>
                   <div>
-                      <h3 className="text-xl font-bold">AI Finanční Asistent</h3> {/* Opraveno: Správně uzavřeno */}
+                      <h3 className="text-xl font-bold">AI Finanční Asistent</h3>
                       <p className="text-xs text-indigo-100 opacity-80">Powered by Gemini</p>
                   </div>
               </div>

@@ -129,33 +129,44 @@
         }
         
         /* NOVÉ STYLY PRO LOGA PARTNERŮ */
-        .partner-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 80px; /* Pevná výška řádku */
-            padding: 10px;
-            margin: 0 15px;
-        }
-        .partner-logo img {
-            max-width: 100%;
-            max-height: 50px; /* Maximální výška loga */
-            width: auto;
-            object-fit: contain;
-            filter: grayscale(100%); /* Černobílý efekt */
-            opacity: 0.7;
-            transition: all 0.3s ease;
-        }
-        .partner-logo img:hover {
-            filter: grayscale(0%); /* Po najetí myší se vybarví */
-            opacity: 1;
-        }
+/* OPRAVA VELIKOSTI LOG */
+.partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px !important; /* Větší prostor pro logo */
+    margin: 15px !important;  /* Rozestupy mezi logy */
+    min-width: 150px;         /* Minimální šířka, aby se nesmrsklo */
+}
 
-        .chart-container {
-            position: relative;
-            height: 300px;
-            width: 100%;
-        }
+.partner-logo img {
+    max-height: 80px !important; /* ZVĚTŠENÍ: Původně tam bylo asi 40-50px */
+    max-width: 200px !important; /* Aby se vešla i dlouhá loga */
+    width: auto;
+    object-fit: contain;
+    
+    /* Vzhled */
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.partner-logo img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1); /* Efekt zvětšení po najetí */
+}
+
+/* ZAJIŠTĚNÍ ZALAMOVÁNÍ (Aby se loga netlačila v jedné řadě) */
+/* Najdi kontejner, ve kterém loga jsou. Pokud nevíš třídu, 
+   toto zkusí zacílit většinu flex kontejnerů v sekci portfolio */
+section#portfolio .container div, 
+.partners-grid, 
+.flex-row { 
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 20px;
+}
         
         /* Custom FAQ Styles for expanding */
         .faq-answer-active {

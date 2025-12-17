@@ -204,7 +204,7 @@
                 <!-- Logo -->
                 <div class="flex items-center gap-3 cursor-pointer shrink-0" onclick="window.location.href='/'">
                     <div id="logo-icon" class="bg-white text-brand-dark font-bold w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 shadow-sm overflow-hidden relative">
-                        <!-- Logo obrázek s inverzním efektem a opraveným onerror handlerem -->
+                        <!-- Logo obrázek s inverzním efektem -->
                         <div id="logo-img-container" class="w-full h-full p-2 flex items-center justify-center">
                             <img id="logo-img" src="logo_M_white.png" alt="Marek Marek Logo" class="logo-img-style" 
                                  onerror="this.style.display='none'; if(this.parentElement) this.parentElement.innerHTML='M';">
@@ -320,7 +320,7 @@
                     </div>
                 </div>
 
-                <!-- NOVÁ OBSAHOVÁ SEKCE (INFO CARD) DLE PŘESNÉHO ZADÁNÍ -->
+                <!-- INFO CARD -->
                 <div class="mt-8 mb-10 max-w-7xl mx-auto px-4">
                     <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
                         <h3 class="text-base font-bold text-[#0a0f29] mb-3 flex items-center gap-2">
@@ -461,32 +461,25 @@
                 <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
                     
                     <!-- Graf 1: Projekce -->
-                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-brand-border/60 flex flex-col">
-                        <div class="mb-4">
-                            <h3 class="text-lg font-bold text-brand-dark flex items-center gap-2">
-                                <i class="fas fa-chart-line text-brand-orange"></i>
-                                Projekce vývoje
-                            </h3>
-                            <div class="text-xs text-slate-400 mt-1">Složené úročení v čase (odhad)</div>
-                        </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-brand-border/60 flex flex-col text-center">
+                        <h3 class="text-lg font-bold text-brand-dark flex items-center justify-center gap-2 mb-4">
+                            <i class="fas fa-chart-line text-brand-orange"></i>
+                            Projekce vývoje
+                        </h3>
                         <div class="flex-1 min-h-[300px] chart-container">
                             <canvas id="growthChart"></canvas>
                         </div>
                         <!-- Vysvětlující věta pod grafem -->
-                        <p class="text-xs text-slate-500 mt-4 text-center italic">
+                        <p class="text-xs text-slate-500 mt-4 italic">
                             Graf ukazuje odhadovaný vývoj hodnoty investice v čase při pravidelném investování a zvolené strategii.
                         </p>
                     </div>
 
-                    <!-- Graf 2: Koláč -->
-                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-brand-border/60 flex flex-col">
-                        <div class="mb-4">
-                            <h3 class="text-lg font-bold text-brand-dark flex items-center gap-2">
-                                <i class="fas fa-chart-pie text-brand-orange"></i>
-                                Složení portfolia
-                            </h3>
-                            <div class="text-xs text-slate-400 mt-1">Rozložení aktiv zvolené strategie</div>
-                        </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-brand-border/60 flex flex-col text-center">
+                        <h3 class="text-lg font-bold text-brand-dark flex items-center justify-center gap-2 mb-4">
+                            <i class="fas fa-chart-pie text-brand-orange"></i>
+                            Složení portfolia
+                        </h3>
                         <div class="flex-1 flex flex-col justify-center items-center gap-6">
                             <div class="relative h-56 w-56">
                                 <canvas id="allocationChart"></canvas>
@@ -562,19 +555,20 @@
                         <p class="text-lg text-blue-100 max-w-3xl mx-auto mb-8 relative z-10">
                             Výsledek z kalkulačky může sloužit jako základ pro sestavení konkrétní investiční strategie podle vašich cílů, příjmů a časového horizontu.
                         </p>
-                        <a href="/investicnikalkulacka/" class="group relative inline-block w-full sm:w-auto bg-gradient-to-r from-brand-orange to-brand-gold hover:to-brand-orange text-brand-dark font-extrabold py-5 px-8 rounded-xl shadow-lg shadow-orange-500/20 transition-all transform hover:scale-[1.02] overflow-hidden no-underline text-center">
+                        <!-- FIXED: Now triggers openModal() like the top CTA -->
+                        <button onclick="openModal()" class="group relative inline-block w-full sm:w-auto bg-gradient-to-r from-brand-orange to-brand-gold hover:to-brand-orange text-brand-dark font-extrabold py-5 px-8 rounded-xl shadow-lg shadow-orange-500/20 transition-all transform hover:scale-[1.02] overflow-hidden no-underline text-center">
                             <div class="absolute top-0 left-0 w-full h-full bg-white/30 skew-x-[-20deg] animate-shimmer"></div>
                             <div class="relative flex items-center justify-center gap-3 text-lg uppercase tracking-wider">
                                 Chci investiční plán
                                 <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                             </div>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
                 <!-- DOPLŇKOVÁ CTA: SPOČÍTEJTE SI SAMI (2 SLOUPE) -->
-                <div class="mt-12 lg:col-span-12">
-                    <h2 class="text-2xl font-bold text-brand-dark mb-8 text-center uppercase tracking-widest">Spočítejte si sami</h2>
+                <div class="mt-12 lg:col-span-12 text-center">
+                    <h2 class="text-2xl font-bold text-brand-dark mb-8 uppercase tracking-widest">Spočítejte si sami</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                         
                         <!-- 1. Životní pojištění kalkulačka -->

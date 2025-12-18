@@ -158,16 +158,34 @@
 }
 
 /* ZAJIŠTĚNÍ ZALAMOVÁNÍ (Aby se loga netlačila v jedné řadě) */
-/* Najdi kontejner, ve kterém loga jsou. Pokud nevíš třídu, 
-   toto zkusí zacílit většinu flex kontejnerů v sekci portfolio */
-section#portfolio .container div, 
-.partners-grid, 
-.flex-row { 
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 20px;
+/* 1. Definice pohybu */
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+/* 2. Nastavení pásu (VŠECHNA ZAŘÍZENÍ) */
+.animate-scroll {
+    /* TOTO JE NEJDŮLEŽITĚJŠÍ: Roztáhne pás tak, aby se vešla všechna loga vedle sebe */
+    width: max-content !important; 
+    display: flex !important;
+    flex-wrap: nowrap !important; /* Zakáže zalamování na další řádek */
+    
+    /* Základní čas pro PC (větší číslo = pomalejší) */
+    animation: scroll 40s linear infinite !important;
 }
-        
+
+/* 3. Specifické nastavení pro MOBIL */
+@media (max-width: 768px) {
+    .animate-scroll {
+        /* Čas pro mobil. */
+        /* Zkus 20s. Díky 'max-content' to teď bude plynulé a rychlé tak akorát. */
+        animation-duration: 20s !important; 
+    }
+    
+    /* Zajištění, že loga nejsou nalepená na sobě */
+    .partner-logo {
+        margin: 0 15px !important;
+    }
+}    
         /* Custom FAQ Styles for expanding */
         .faq-answer-active {
             max-height: 500px !important;
@@ -206,9 +224,7 @@ section#portfolio .container div,
         /* ============================================= */
 /* VYNUCENÁ RYCHLOST JEN PRO MOBILY */
 /* ============================================= */
-@media (max-width: 768px) {
-    .animate-scroll {
-        /* Přepíše úplně všechno nastavení animace pro mobily */
+
         animation-duration: 8s !important; 
         
         /* Pojistka, aby animace vůbec běžela */

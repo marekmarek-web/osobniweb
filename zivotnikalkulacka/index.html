@@ -8,6 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons CDN (Pro ikony) -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- FontAwesome CDN (Pro hvězdičky a trofej v recenzích) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         /* Global Styles */
         :root {
@@ -94,6 +97,35 @@
             max-width: 100vw;
             /* Zabezpečení proti přetečení - dekorace jsou uvnitř parenta s overflow:hidden */
         }
+
+        /* --- STYLY PRO RECENZE (PŘIDÁNO) --- */
+        /* Základní interakce karty */
+        .review-badge {
+            position: relative; /* Nutné pro z-index a pozicování potomků */
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .review-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styl pro oříznutí ikony poháru uvnitř boxu */
+        .trophy-badge {
+            position: relative;
+            overflow: hidden; /* Důležité: ořízne ikonu, která přesahuje */
+        }
+
+        /* Styl pro ikonu poháru na pozadí */
+        .trophy-icon {
+            position: absolute;
+            right: -2px;
+            bottom: -2px;
+            font-size: 2.5rem; /* Velikost ikony */
+            color: #fbbf24;    /* Zlatá barva */
+            opacity: 0.1;      /* Průhlednost, aby byla jen jako 'vodoznak' */
+            pointer-events: none; /* Aby neinterferovala s kliknutím */
+        }
       </style>
 </head>
 <body class="min-h-screen bg-[#EAF3FF] font-sans text-slate-800 relative pt-20">
@@ -108,8 +140,10 @@
                 
                 <!-- Logo -->
                 <a href="/" class="flex items-center gap-3 cursor-pointer shrink-0">
-                    <div id="logo-icon" class="font-bold w-10 h-10 flex items-center justify-center rounded-full text-xl transition-all duration-300 shadow-sm overflow-hidden bg-white text-[#0a0f29]">
-                        <i data-lucide="heart-pulse" id="logo-icon-svg" class="w-3/5 h-3/5 object-contain transition-all duration-300 text-[#0a0f29]" style="stroke-width: 3;"></i>
+                    <!-- LOGO IMAGE CONTAINER -->
+                    <div id="logo-icon" class="font-bold w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 shadow-sm overflow-hidden bg-white">
+                        <!-- PŘIDÁNO: Logo obrázek s inverzní logikou (na začátku invertovaný = černý v bílém kruhu) -->
+                        <img src="logo_M_white.png" id="logo-image" alt="Logo" class="w-full h-full object-contain p-1.5 transition-all duration-300 invert">
                     </div>
                     <div class="flex flex-col leading-tight">
                         <span id="logo-text" class="text-lg font-bold transition-colors duration-300 text-white">Marek Marek<span class="text-[#ea8d00]">.</span></span>
@@ -192,6 +226,7 @@
                  <!-- 2. Vrstva: OBSAH -->
                  <div class="relative z-10 p-6 md:p-12 text-white flex flex-col lg:flex-row justify-between items-center lg:items-start gap-8">
                     
+                    <!-- Textová část -->
                     <div class="flex-1 max-w-3xl">
                         <h2 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
                             Kalkulačka životního pojištění – <span class="text-[#ea8d00]">výpočet potřebného krytí</span>
@@ -232,6 +267,56 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- PŘIDÁNO: Recenze Container (v Hero sekci) -->
+                    <div class="flex flex-col gap-3 min-w-[240px]">
+    
+                        <!-- Google Badge -->
+                        <a href="https://www.google.com/search?q=marek+marek+recenze" 
+                           target="_blank" 
+                           class="review-badge bg-white rounded-xl py-3 px-4 shadow-lg flex items-center gap-4 group no-underline text-slate-800">
+                            <div class="bg-white p-1.5 rounded-full border border-slate-100 shrink-0">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="w-5 h-5">
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-1.5 mb-0.5">
+                                    <span class="font-bold text-lg">4.8</span>
+                                    <div class="flex text-brand-gold text-xs text-yellow-400">
+                                        <!-- Hvězdičky (FontAwesome ikony) -->
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="text-xs text-slate-400">/ 5</span>
+                                </div>
+                                <div class="text-xs font-semibold text-slate-500 group-hover:text-brand-orange transition-colors">
+                                    Zobrazit recenze
+                                </div>
+                            </div>
+                        </a>
+                    
+                        <!-- Seznam/Firmy.cz Badge -->
+                        <a href="https://www.firmy.cz/detail/13091457-marek-marek-privatni-financni-planovani-roudnice-nad-labem.html" 
+                           target="_blank" 
+                           class="review-badge bg-white rounded-xl py-3 px-4 shadow-lg flex items-center gap-4 group no-underline text-slate-800 trophy-badge">
+                            
+                            <!-- Trophy Icon Background (Fixní pozice v rohu) -->
+                            <i class="fas fa-trophy trophy-icon"></i>
+                            
+                            <div class="bg-[#cc0000] p-1.5 rounded-full shrink-0 w-8 h-8 flex items-center justify-center text-white font-serif font-bold text-xs">
+                                S
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="font-bold text-sm">Firmy.cz</span>
+                                    <i class="fas fa-trophy text-brand-gold text-yellow-400 text-sm"></i>
+                                </div>
+                                <div class="text-xs font-semibold text-slate-500 group-hover:text-[#cc0000] transition-colors">
+                                    Ověřená firma
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Konec Recenze Container -->
+
                  </div>
             </div>
             <!-- HERO CONTAINER END -->
@@ -426,7 +511,10 @@
             <div class="grid md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1 md:col-span-1">
                     <div class="flex items-center gap-2 mb-4">
-                        <div class="bg-white text-[#0a0f29] font-bold w-8 h-8 flex items-center justify-center rounded">M</div>
+                        <!-- PŘIDÁNO: Logo místo M, invertované aby bylo černé na bílém podkladu čtverečku -->
+                        <div class="bg-white w-8 h-8 flex items-center justify-center rounded">
+                             <img src="logo_M_white.png" alt="M" class="w-6 h-6 object-contain invert">
+                        </div>
                         <span class="text-xl font-bold text-white">Marek Marek.</span>
                     </div>
                     <p class="text-sm text-slate-400 mb-4">
@@ -905,6 +993,17 @@
 
                                 <div class="space-y-4">
                                     <div>
+                                        <label class="block text-sm font-bold text-slate-700 mb-1">Jméno a příjmení <span class="text-red-500">*</span></label>
+                                        <div class="relative">
+                                            <i data-lucide="user" class="absolute left-3 top-3.5 w-5 h-5 text-slate-400"></i>
+                                            <input type="text" required name="name" id="contact-name"
+                                                class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#ea8d00] outline-none"
+                                                placeholder="Jan Novák"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div>
                                         <label class="block text-sm font-bold text-slate-700 mb-1">Váš e-mail <span class="text-red-500">*</span></label>
                                         <div class="relative">
                                             <i data-lucide="mail" class="absolute left-3 top-3.5 w-5 h-5 text-slate-400"></i>
@@ -1057,7 +1156,7 @@
             const currentScroll = window.scrollY;
             const navbar = $('#navbar');
             const logoIcon = $('#logo-icon');
-            const logoIconSvg = $('#logo-icon-svg');
+            const logoImage = $('#logo-image'); // PŘIDÁNO: Reference na obrázek
             const logoText = $('#logo-text');
             const logoSubtext = $('#logo-subtext');
             const navLinks = $$('.nav-link');
@@ -1071,11 +1170,13 @@
                 navbar.classList.remove('glass-header-top');
                 navbar.classList.add('glass-header-scrolled');
                 
-                logoIcon.classList.remove('bg-white', 'text-[#0a0f29]');
-                logoIcon.classList.add('bg-[#0a0f29]', 'text-white');
-                // loga/ikony v tomto stavu
-                logoIconSvg.classList.add('text-white');
-                logoIconSvg.classList.remove('text-[#0a0f29]');
+                logoIcon.classList.remove('bg-white');
+                logoIcon.classList.add('bg-[#0a0f29]');
+                
+                // LOGO LOGIKA: Když je header světlý (scrolled), kroužek je tmavý (#0a0f29).
+                // Obrázek "logo_M_white.png" je bílý. Na tmavém kroužku je bílá OK.
+                // Takže ODSTRANÍME invert.
+                if(logoImage) logoImage.classList.remove('invert');
 
                 logoText.classList.remove('text-white');
                 logoText.classList.add('text-[#0a0f29]');
@@ -1096,11 +1197,13 @@
                 navbar.classList.remove('glass-header-scrolled');
                 navbar.classList.add('glass-header-top');
 
-                logoIcon.classList.add('bg-white', 'text-[#0a0f29]');
-                logoIcon.classList.remove('bg-[#0a0f29]', 'text-white');
-                 // loga/ikony v tomto stavu
-                logoIconSvg.classList.add('text-[#0a0f29]');
-                logoIconSvg.classList.remove('text-white');
+                logoIcon.classList.add('bg-white');
+                logoIcon.classList.remove('bg-[#0a0f29]');
+                
+                // LOGO LOGIKA: Když je header tmavý (top), kroužek je bílý (bg-white).
+                // Obrázek "logo_M_white.png" je bílý. Na bílém kroužku by nebyl vidět.
+                // Takže PŘIDÁME invert, aby byl černý.
+                if(logoImage) logoImage.classList.add('invert');
 
                 logoText.classList.add('text-white');
                 logoText.classList.remove('text-[#0a0f29]');

@@ -203,6 +203,20 @@ section#portfolio .container div,
             /* Bez inverze pro světlé pozadí (SCROLLED) */
             filter: invert(0);
         }
+        /* ============================================= */
+/* VYNUCENÁ RYCHLOST JEN PRO MOBILY */
+/* ============================================= */
+@media (max-width: 768px) {
+    .animate-scroll {
+        /* Přepíše úplně všechno nastavení animace pro mobily */
+        animation-duration: 8s !important; 
+        
+        /* Pojistka, aby animace vůbec běžela */
+        animation-name: scroll !important;
+        animation-timing-function: linear !important;
+        animation-iteration-count: infinite !important;
+    }
+}
     </style>
 </head>
 <body class="bg-white font-sans text-slate-800 antialiased overflow-x-hidden">

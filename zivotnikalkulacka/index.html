@@ -875,6 +875,16 @@
                                 <!-- Hidden inputs for Formspree -->
                                 <input type="hidden" name="_subject" value="Nový lead: ${title}">
                                 <input type="hidden" name="_captcha" value="false">
+                                
+                                <!-- Hidden inputs with calculator values -->
+                                <input type="hidden" name="vek" value="${age}">
+                                <input type="hidden" name="prijem" value="${netIncome}">
+                                <input type="hidden" name="vydaje" value="${expenses}">
+                                <input type="hidden" name="zavazky" value="${liabilities}">
+                                <input type="hidden" name="rezervy" value="${reserves}">
+                                <input type="hidden" name="deti" value="${children}">
+                                <input type="hidden" name="manzelstvi" value="${hasSpouse ? 'Ano' : 'Ne'}">
+
 
                                 <div class="space-y-4">
                                     <div>

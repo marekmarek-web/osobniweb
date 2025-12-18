@@ -685,7 +685,15 @@
             }
 
             const familyProtection = Math.max(capitalDeathIncome, spouseLumpSum + childrenLumpSum);
-            const deathCoverageRaw = Math.max(0, liabilities + familyProtection - reserves);
+            
+            // Výpočet hrubého krytí smrti
+            let deathCoverageRaw = Math.max(0, liabilities + familyProtection - reserves);
+
+            // ÚPRAVA: Pokud klient nemá děti, manželku/manžela ani závazky, pojistné riziko smrti je 0
+            if (children === 0 && !hasSpouse && liabilities === 0) {
+                deathCoverageRaw = 0;
+            }
+
             const deathCoverage = roundTo10k(deathCoverageRaw);
 
             // 4. Trvalé následky (TN)

@@ -497,6 +497,7 @@
         let hasSpouse = true;
         let isMobileMenuOpen = false;
         let isScrolled = false;
+        let fileName = null; // Přidáno globálně pro opravu chyby
         
         const MIN_INCOME = 15000;
         const MAX_INCOME = 250000;
@@ -942,10 +943,25 @@
                 document.getElementById('file-name-display').closest('.flex').querySelector('[data-lucide="upload-cloud"]').classList.add('hidden');
             }
         };
+
+        // Přidání globální funkce pro změnu souboru
+        const handleFileChange = (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                fileName = file.name;
+                const display = document.getElementById('file-name-display');
+                if (display) {
+                    display.textContent = fileName;
+                    display.classList.add('text-[#ea8d00]');
+                    display.closest('.flex').querySelector('[data-lucide="upload-cloud"]').classList.add('hidden');
+                }
+            }
+        };
         
         const handleCloseModal = () => {
             const modalRoot = $('#modal-root');
             if (modalRoot) modalRoot.innerHTML = '';
+            fileName = null; // Reset fileName on close
         };
 
         const handleFormSubmit = (event) => {
